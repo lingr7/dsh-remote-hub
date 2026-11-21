@@ -1,0 +1,26 @@
+{
+  "name": "dsh-remote-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "遥控器命令总线：单一监听者 + 上下文栈 + owner 注册，把物理按键路由给当前该管的对象（音乐卡片、对话、审批卡……）。",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  }
+}
